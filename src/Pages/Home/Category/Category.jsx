@@ -23,7 +23,7 @@ const Category = () => {
                 <h3 className='font-normal text-[40px]'>ORDER ONLINE</h3>
                 <hr />
             </div>
-            <div className='mt-12'>
+            <div className='mt-12 max-w-screen-xl mx-auto border-2'>
                 <Swiper
                     slidesPerView={4}
                     spaceBetween={30}
@@ -65,6 +65,18 @@ const Category = () => {
                         </h3>
                     </SwiperSlide>
                 </Swiper>
+            </div>
+            <div className='mt-32 max-w-screen-xl mx-auto'>
+                <div className="hero min-h-screen"
+                    style={{ backgroundImage: 'url(https://i.ibb.co/cgrjqh3/chef-service.jpg)' }}
+                >
+                    <div className="hero-content text-center bg-[white]">
+                        <div className="max-w-screen-lg mx-auto">
+                            <h1 className="mb-2 cinzel text-[45px] font-normal">Bistro Boss</h1>
+                            <p className="mb-5">Bistro Boss is a cozy restaurant offering delicious meals in a welcoming atmosphere. With a diverse menu featuring flavorful dishes, it's a go-to spot for satisfying your culinary cravings and enjoying a delightful dining experience.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );
