@@ -1,9 +1,12 @@
+import Banner from "../Banner/Banner";
+import Category from "../Category/Category";
 
 
 const Home = () => {
     return (
-        <div className="border-2 p-5 rounded-lg mt-10">
-            <h2>This is Home</h2>
+        <div>
+            <Banner />
+            <Category />
         </div>
     );
 };
