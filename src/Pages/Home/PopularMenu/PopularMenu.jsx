@@ -33,7 +33,7 @@ const PopularMenu = () => {
             </div>
 
             <div className="text-center mt-12">
-                <button className="btn uppercase" onClick={() => setShowAll(!showAll)}>
+                <button className="btn uppercase btn-outline" onClick={() => setShowAll(!showAll)}>
                     {showAll ? 'Hide Menu' : 'View Full  Menu'}
                 </button>
 
