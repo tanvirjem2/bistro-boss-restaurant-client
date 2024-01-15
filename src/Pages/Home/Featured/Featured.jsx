@@ -13,7 +13,7 @@ const Featured = () => {
     };
 
     return (
-        <div className="mt-32 featured-item text-white relative">
+        <div className="mt-32 featured-item text-white relative bg-fixed">
             <div className='py-32 featured-content'>
                 <div className='text-center'>
                     <p className='text-[#D99904] mb-4'><i>---Check it out---</i></p>
@@ -21,10 +21,10 @@ const Featured = () => {
                         <h3 className='font-normal lg:text-[40px] p-3'>FROM OUR MENU</h3>
                     </div>
                 </div>
-                <div className='flex max-w-screen-xl mt-12 mx-auto items-center gap-16'>
-                    <img className='w-[648px] h-[400px]' src={featured} alt="" />
+                <div className='lg:flex max-w-screen-xl mt-12 mx-auto items-center gap-16'>
+                    <img className='lg:w-[648px] lg:h-[400px]' src={featured} alt="" />
                     <div>
-                        <div className='space-y-2'>
+                        <div className='space-y-2 mt-6'>
                             <p className='text-2xl font-normal'>March 20, 2023</p>
                             <p className='text-2xl font-normal'>WHERE CAN I GET SOME?</p>
                             {isExpanded ? (
@@ -33,7 +33,7 @@ const Featured = () => {
                                 <p className="text-xl font-normal">{content.slice(0, 200)}...</p>
                             )}
                         </div>
-                        <button className='btn btn-outline mt-6 uppercase text-white' onClick={handleReadMore}>
+                        <button className='btn btn-outline mt-6 uppercase text-white border-0 border-b-4' onClick={handleReadMore}>
                             {isExpanded ? 'Read Less' : 'Read More'}
                         </button>
                     </div>
