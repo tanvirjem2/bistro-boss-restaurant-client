@@ -19,9 +19,9 @@ const Category = () => {
         <div className='mt-[79px]'>
             <div className='text-center'>
                 <p className='text-[#D99904] mb-4'><i>---From 11:00am to 10:00pm---</i></p>
-                <hr />
-                <h3 className='font-normal text-[40px]'>ORDER ONLINE</h3>
-                <hr />
+                <div className='border-t-2 border-b-2 w-2/4 lg:w-1/4 mx-auto'>
+                    <h3 className='font-normal lg:text-[40px] p-3'>ORDER ONLINE</h3>
+                </div>
             </div>
             <div className='mt-12 max-w-screen-xl mx-auto border-2'>
                 <Swiper
@@ -36,31 +36,31 @@ const Category = () => {
                 >
                     <SwiperSlide>
                         <img src={slide1} alt="" />
-                        <h3 className='text-[#FFFFFF] uppercase font-normal text-2xl cinzel text-center -mt-16'>
+                        <h3 className='text-[#FFFFFF] uppercase font-normal lg:text-2xl cinzel text-center -mt-16'>
                             Salads
                         </h3>
                     </SwiperSlide>
                     <SwiperSlide>
                         <img src={slide2} alt="" />
-                        <h3 className='text-[#FFFFFF] uppercase font-normal text-2xl cinzel text-center -mt-16'>
+                        <h3 className='text-[#FFFFFF] uppercase font-normal lg:text-2xl cinzel text-center -mt-16'>
                             pizzas
                         </h3>
                     </SwiperSlide>
                     <SwiperSlide>
                         <img src={slide3} alt="" />
-                        <h3 className='text-[#FFFFFF] uppercase font-normal text-2xl cinzel text-center -mt-16'>
+                        <h3 className='text-[#FFFFFF] uppercase font-normal lg:text-2xl cinzel text-center -mt-16'>
                             Soups
                         </h3>
                     </SwiperSlide>
                     <SwiperSlide>
                         <img src={slide4} alt="" />
-                        <h3 className='text-[#FFFFFF] uppercase font-normal text-2xl cinzel text-center -mt-16'>
+                        <h3 className='text-[#FFFFFF] uppercase font-normal lg:text-2xl cinzel text-center -mt-16'>
                             desserts
                         </h3>
                     </SwiperSlide>
                     <SwiperSlide>
                         <img src={slide5} alt="" />
-                        <h3 className='text-[#FFFFFF] uppercase font-normal text-2xl cinzel text-center -mt-16'>
+                        <h3 className='text-[#FFFFFF] uppercase font-normal lg:text-2xl cinzel text-center -mt-16'>
                             Salads
                         </h3>
                     </SwiperSlide>
