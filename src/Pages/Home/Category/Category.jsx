@@ -68,7 +68,7 @@ const Category = () => {
             </div>
             <div className='mt-32 max-w-screen-xl mx-auto'>
                 <div className="hero min-h-screen bg-fixed"
-                    style={{ backgroundImage: 'url(https://i.ibb.co/cgrjqh3/chef-service.jpg)' }}
+                    style={{ backgroundImage: 'url(https://i.ibb.co/4VLcV6Z/chef-service.jpg)' }}
                 >
                     <div className="hero-content text-center bg-[white]">
                         <div className="max-w-screen-lg mx-auto">
