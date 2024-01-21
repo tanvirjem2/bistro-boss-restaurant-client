@@ -32,7 +32,9 @@ const Menu = () => {
                 </div>
             </div>
 
-            <PopularMenu />
+            <div className='mb-14'>
+                <PopularMenu />
+            </div>
 
             <CoverMenu
                 img={dessertImage}
@@ -42,7 +44,9 @@ const Menu = () => {
 
             </CoverMenu>
 
-            <PopularMenu />
+            <div className='mb-14'>
+                <PopularMenu />
+            </div>
 
             <CoverMenu
                 img={pizzaImage}
@@ -52,7 +56,9 @@ const Menu = () => {
 
             </CoverMenu>
 
-            <PopularMenu />
+            <div className='mb-14'>
+                <PopularMenu />
+            </div>
 
             <CoverMenu
                 img={saladImage}
@@ -62,7 +68,9 @@ const Menu = () => {
 
             </CoverMenu>
 
-            <PopularMenu />
+            <div className='mb-14'>
+                <PopularMenu />
+            </div>
 
             <CoverMenu
                 img={soupImage}
@@ -72,7 +80,9 @@ const Menu = () => {
 
             </CoverMenu>
 
-            <PopularMenu />
+            <div className='mb-14'>
+                <PopularMenu />
+            </div>
 
         </div >
     );
