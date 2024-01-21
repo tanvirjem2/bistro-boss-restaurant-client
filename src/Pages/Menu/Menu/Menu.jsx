@@ -12,8 +12,23 @@ import pizzaImage from '../../../assets/menu/pizza-bg.jpg'
 import saladImage from '../../../assets/menu/salad-bg.jpg'
 
 import soupImage from '../../../assets/menu/soup-bg.jpg'
+import useMenu from '../../../hooks/useMenu';
+import MenuCategory from '../MenuCategory/MenuCategory';
 
 const Menu = () => {
+
+    const [menu] = useMenu();
+
+    const offered = menu.filter(item => item.category === 'offered');
+
+    const dessert = menu.filter(item => item.category === 'dessert');
+
+    const pizza = menu.filter(item => item.category === 'pizza');
+
+    const salad = menu.filter(item => item.category === 'salad');
+
+    const soup = menu.filter(item => item.category === 'soup');
+
     return (
         <div>
             <Helmet>
@@ -32,8 +47,10 @@ const Menu = () => {
                 </div>
             </div>
 
+            {/* ---------------- Offered Items -------------------- */}
+
             <div className='mb-14'>
-                <PopularMenu />
+                <MenuCategory items={offered}></MenuCategory>
             </div>
 
             <CoverMenu
@@ -44,8 +61,10 @@ const Menu = () => {
 
             </CoverMenu>
 
+            {/* ----------------- For Dessert -------------------- */}
+
             <div className='mb-14'>
-                <PopularMenu />
+                <MenuCategory items={dessert}></MenuCategory>
             </div>
 
             <CoverMenu
@@ -56,8 +75,10 @@ const Menu = () => {
 
             </CoverMenu>
 
+            {/* ---------------- PIZZA Items -------------------- */}
+
             <div className='mb-14'>
-                <PopularMenu />
+                <MenuCategory items={pizza}></MenuCategory>
             </div>
 
             <CoverMenu
@@ -68,8 +89,10 @@ const Menu = () => {
 
             </CoverMenu>
 
+            {/* ---------------- SALADS Items -------------------- */}
+
             <div className='mb-14'>
-                <PopularMenu />
+                <MenuCategory items={salad}></MenuCategory>
             </div>
 
             <CoverMenu
@@ -80,8 +103,10 @@ const Menu = () => {
 
             </CoverMenu>
 
+            {/* ---------------- SOUPS Items -------------------- */}
+
             <div className='mb-14'>
-                <PopularMenu />
+                <MenuCategory items={soup}></MenuCategory>
             </div>
 
         </div >

@@ -1,31 +1,26 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import MenuItem from "../../Shared/MenuItem/MenuItem";
+import useMenu from "../../../hooks/useMenu";
 
 
 const PopularMenu = () => {
 
-    const [menu, setMenu] = useState([])
-
     const [showAll, setShowAll] = useState(false);
 
-    useEffect(() => {
-        fetch('/menu.json')
-            .then(res => res.json())
-            .then(data => {
-                setMenu(data)
-            })
-    }, [])
+    const [menu] = useMenu();
 
     return (
 
         <div className="mt-12 max-w-screen-xl mx-auto">
 
             <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-6">
+
                 {showAll ?
                     menu.map(item => <MenuItem key={item._id} item={item}></MenuItem>)
                     :
                     menu.slice(0, 6).map(item => <MenuItem key={item._id} item={item}></MenuItem>)
                 }
+
             </div>
 
             <div className="text-center mt-12">
