@@ -25,11 +25,13 @@ const NavBar = () => {
 
                     </ul>
                 </div>
-                <a className="text-xl">
-                    <span className="text-[32px] font-black cinzel">BISTRO BOSS</span>
-                    <br />
-                    <span className="text-2xl font-bold cinzel">Restaurant</span>
-                </a>
+                <Link to={"/"}>
+                    <a className="text-xl">
+                        <span className="text-xl lg:text-[32px] font-black cinzel">BISTRO BOSS</span>
+                        <br />
+                        <span className="lg:text-2xl font-bold cinzel">Restaurant</span>
+                    </a>
+                </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 gap-6">

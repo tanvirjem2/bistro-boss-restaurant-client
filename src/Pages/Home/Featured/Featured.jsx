@@ -2,6 +2,8 @@ import { useState } from 'react';
 import featured from '../../../assets/home/featured.jpg'
 import './Featured.css'
 
+import moment from 'moment';
+
 const Featured = () => {
 
     const [isExpanded, setIsExpanded] = useState(false);
@@ -25,7 +27,7 @@ const Featured = () => {
                     <img className='lg:w-[648px] lg:h-[400px]' src={featured} alt="" />
                     <div>
                         <div className='space-y-2 mt-6'>
-                            <p className='text-2xl font-normal'>March 20, 2023</p>
+                            <p className='text-2xl font-normal'>{moment().format("MMMM D, YYYY")}</p>
                             <p className='text-2xl font-normal'>WHERE CAN I GET SOME?</p>
                             {isExpanded ? (
                                 <p className="text-xl font-normal">{content}</p>
