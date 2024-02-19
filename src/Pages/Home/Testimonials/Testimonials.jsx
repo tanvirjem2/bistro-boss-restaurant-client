@@ -14,6 +14,7 @@ import { useEffect, useState } from 'react';
 import { Rating } from '@smastrom/react-rating'
 
 import '@smastrom/react-rating/style.css'
+import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 
 const Testimonials = () => {
 
@@ -29,12 +30,12 @@ const Testimonials = () => {
 
     return (
         <div className="mt-32 max-w-screen-xl mx-auto">
-            <div className='text-center'>
-                <p className='text-[#D99904] mb-4'><i>---What Our Clients Say---</i></p>
-                <div className='border-t-2 border-b-2 w-2/4 lg:w-4/12  mx-auto'>
-                    <h3 className='font-normal lg:text-[40px] p-3'>TESTIMONIALS</h3>
-                </div>
-            </div>
+
+            <SectionTitle
+                subHeading={`---What Our Clients Say---`}
+                heading={`TESTIMONIALS`}
+            />
+
             <div className='text-center'>
                 <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
                     {reviews.map(review =>
@@ -55,6 +56,7 @@ const Testimonials = () => {
                         </SwiperSlide>)}
                 </Swiper>
             </div>
+
         </div>
     );
 };

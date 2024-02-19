@@ -1,6 +1,7 @@
 import { FaFacebookF } from "react-icons/fa6";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaTwitter } from "react-icons/fa6";
+import moment from "moment";
 
 const Footer = () => {
     return (
@@ -23,7 +24,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="bg-[#151515] py-[17px] text-center font-medium text-xl">
-                <p>Copyright © CulinaryCloud. All rights reserved.</p>
+                <p>Copyright © {moment().format("YYYY")} CulinaryCloud. All rights reserved.</p>
             </div>
         </div>
     );

@@ -1,16 +1,17 @@
 import slide1 from '../../../assets/home/Rectangle 5.png'
 import slide2 from '../../../assets/home/Rectangle 5.png'
 import slide3 from '../../../assets/home/Rectangle 5.png'
+import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 
 const ChefRecommends = () => {
     return (
         <div className="mt-32">
-            <div className='text-center'>
-                <p className='text-[#D99904] mb-4'><i>---Should Try---</i></p>
-                <div className='border-t-2 border-b-2 w-2/4 lg:w-2/5 mx-auto'>
-                    <h3 className='font-normal lg:text-[40px] p-3'>CHEF RECOMMENDS</h3>
-                </div>
-            </div>
+
+            <SectionTitle
+                subHeading={`---Should Try---`}
+                heading={`CHEF RECOMMENDS`}
+            />
+
             <div className="mt-12 grid grid-cols-1 lg:grid-cols-3 max-w-screen-xl mx-auto gap-7 text-center">
                 <div className="bg-[#F3F3F3] pb-8">
                     <img src={slide1} alt="" />

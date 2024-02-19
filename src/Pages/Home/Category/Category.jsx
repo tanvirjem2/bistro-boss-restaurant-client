@@ -13,29 +13,24 @@ import slide2 from '../../../assets/home/slide2.jpg'
 import slide3 from '../../../assets/home/slide3.jpg'
 import slide4 from '../../../assets/home/slide4.jpg'
 import slide5 from '../../../assets/home/slide5.jpg'
-
-import { motion } from "framer-motion"
+import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 
 const Category = () => {
 
     return (
 
-        <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className='mt-[79px]'>
-            <div className='text-center'>
-                <p className='text-[#D99904] mb-4'><i>---From 11:00am to 10:00pm---</i></p>
-                <div className='border-t-2 border-b-2 w-2/4 lg:w-1/4 mx-auto'>
-                    <h3 className='font-normal lg:text-[40px] p-3'>ORDER ONLINE</h3>
-                </div>
-            </div>
-            <div className='mt-12 max-w-screen-xl mx-auto border-2'>
+        <div className='mt-[79px]'>
+
+            <SectionTitle
+                subHeading={`---From 11:00am to 10:00pm---`}
+                heading={`ORDER ONLINE`}
+            />
+
+            <div className='mt-12 max-w-screen-xl mx-auto'>
 
                 <Swiper
                     slidesPerView={4}
                     spaceBetween={30}
-                    centeredSlides={true}
                     pagination={{
                         clickable: true,
                     }}
@@ -75,6 +70,7 @@ const Category = () => {
                 </Swiper>
 
             </div>
+
             <div className='mt-32 max-w-screen-xl mx-auto'>
                 <div className="hero min-h-screen bg-fixed"
                     style={{ backgroundImage: 'url(https://i.ibb.co/4VLcV6Z/chef-service.jpg)' }}
@@ -87,7 +83,8 @@ const Category = () => {
                     </div>
                 </div>
             </div>
-        </motion.div>
+
+        </div>
 
     );
 };

@@ -30,7 +30,7 @@ const NavBar = () => {
                     <a className="text-xl">
                         <span className="text-xl lg:text-[32px] font-black cinzel">BISTRO BOSS</span>
                         <br />
-                        <span className="lg:text-2xl font-bold cinzel">Restaurant</span>
+                        <span className="lg:text-2xl font-bold cinzel tracking-[9.12px]">Restaurant</span>
                     </a>
                 </Link>
             </div>

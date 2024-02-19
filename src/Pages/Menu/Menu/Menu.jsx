@@ -34,6 +34,7 @@ const Menu = () => {
             <Helmet>
                 <title>Bistro Boss | Menu</title>
             </Helmet>
+
             <Cover
                 img={menuImage}
                 title={"OUR MENU"}

@@ -1,3 +1,4 @@
+import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import Banner from "../Banner/Banner";
 import Category from "../Category/Category";
 import ChefRecommends from "../ChefRecommends/ChefRecommends";
@@ -16,13 +17,16 @@ const Home = () => {
             </Helmet>
 
             <Banner />
+
             <Category />
 
-            <div className='text-center mt-[92px]'>
-                <p className='text-[#D99904] mb-4'><i>---Check it out---</i></p>
-                <div className='border-t-2 border-b-2 w-2/4 lg:w-4/12 mx-auto'>
-                    <h3 className='font-normal lg:text-[40px] p-3'>FROM OUR MENU</h3>
-                </div>
+            <div className='mt-[92px]'>
+
+                <SectionTitle
+                    subHeading={`---Check it out---`}
+                    heading={`FROM OUR MENU`}
+                />
+
             </div>
 
             <PopularMenu />
@@ -36,7 +40,9 @@ const Home = () => {
             </div>
 
             <ChefRecommends />
+
             <Featured />
+
             <Testimonials />
         </div>
     );

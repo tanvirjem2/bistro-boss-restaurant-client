@@ -3,6 +3,7 @@ import featured from '../../../assets/home/featured.jpg'
 import './Featured.css'
 
 import moment from 'moment';
+import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 
 const Featured = () => {
 
@@ -16,13 +17,14 @@ const Featured = () => {
 
     return (
         <div className="mt-32 featured-item text-white relative bg-fixed">
+
             <div className='py-32 featured-content'>
-                <div className='text-center'>
-                    <p className='text-[#D99904] mb-4'><i>---Check it out---</i></p>
-                    <div className='border-t-2 border-b-2 w-2/4 lg:w-4/12  mx-auto'>
-                        <h3 className='font-normal lg:text-[40px] p-3'>FROM OUR MENU</h3>
-                    </div>
-                </div>
+
+                <SectionTitle
+                    subHeading={`---Check it out---`}
+                    heading={`FROM OUR MENU`}
+                />
+
                 <div className='lg:flex max-w-screen-xl mt-12 mx-auto items-center gap-16'>
                     <img className='lg:w-[648px] lg:h-[400px]' src={featured} alt="" />
                     <div>
@@ -40,6 +42,7 @@ const Featured = () => {
                         </button>
                     </div>
                 </div>
+
             </div>
         </div>
     );

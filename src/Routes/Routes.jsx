@@ -6,6 +6,9 @@ import Home from "../Pages/Home/Home/Home";
 import Menu from "../Pages/Menu/Menu/Menu";
 import Order from "../Pages/Order/Order/Order";
 
+
+// Don't forget to export the router
+
 export const router = createBrowserRouter([
     {
         path: "/",
