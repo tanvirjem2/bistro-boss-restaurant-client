@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 
 import MenuItem from "../../Shared/MenuItem/MenuItem";
 
-import CoverMenu from "../../Shared/Cover/CoverMenu";
-
 
 const MenuCategory = ({ items, title }) => {
 
@@ -21,7 +19,7 @@ const MenuCategory = ({ items, title }) => {
                 </div>
 
                 <div className="text-center">
-                    <Link to={`/order`}>
+                    <Link to={`/order/${title}`}>
                         <button
                             className='uppercase btn btn-outline border-0 border-b-4 mt-6 text-[#BB8506]'>
                             ORDER YOUR FAVORITE FOOD

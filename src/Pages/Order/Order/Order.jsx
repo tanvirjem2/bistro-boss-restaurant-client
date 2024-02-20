@@ -1,32 +1,36 @@
 import { Helmet } from "react-helmet-async";
-
 import shopImage from "../../../assets/shop/banner2.jpg"
 import Cover from "../../Shared/Cover/Cover";
-
-
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { useState } from "react";
-
 import '../Order/Order.css'
 import useMenu from "../../../hooks/useMenu";
 import FoodCard from "../../../components/FoodCard/FoodCard";
+import { useParams } from "react-router-dom";
 
 const Order = () => {
 
-    const [tabIndex, setTabIndex] = useState(0);
-
     const [menu] = useMenu();
 
-    const drinks = menu.filter(item => item.category === 'drinks');
+    const categories = ['salad', 'pizza', 'soup', 'dessert', 'drinks']
 
-    const dessert = menu.filter(item => item.category === 'dessert');
+    const { category } = useParams();
 
-    const pizza = menu.filter(item => item.category === 'pizza');
+    const initialIndex = categories.indexOf(category)
+
+    const [tabIndex, setTabIndex] = useState(initialIndex);
 
     const salad = menu.filter(item => item.category === 'salad');
 
+    const pizza = menu.filter(item => item.category === 'pizza');
+
     const soup = menu.filter(item => item.category === 'soup');
+
+    const dessert = menu.filter(item => item.category === 'dessert');
+
+    const drinks = menu.filter(item => item.category === 'drinks');
+
 
     return (
         <div>
