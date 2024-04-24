@@ -5,8 +5,14 @@ import { Helmet } from 'react-helmet-async';
 import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import Swal from 'sweetalert2';
+import useAxiosPublic from '../../hooks/useAxiosPublic';
+import { FaGoogle } from 'react-icons/fa6';
+import SocialLogin from '../../components/SocialLogin/SocialLogin';
 
 const SignUp = () => {
+
+    // Use AxiosPublic
+    const axiosPublic = useAxiosPublic();
 
     // Redirect to the Home Page
     const navigate = useNavigate();
@@ -25,16 +31,26 @@ const SignUp = () => {
                 console.log(loggedUser);
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
-                        console.log('User profile info updated');
-                        reset();
-                        Swal.fire({
-                            position: "top-end",
-                            icon: "success",
-                            title: "User Created Successfully",
-                            showConfirmButton: false,
-                            timer: 1500
-                        });
-                        navigate('/')
+
+                        // Create user entry in the database
+                        const userInfo = {
+                            name: data.name,
+                            email: data.email
+                        }
+                        axiosPublic.post('/users', userInfo)
+                            .then(res => {
+                                if (res.data.insertedId) {
+                                    reset();
+                                    Swal.fire({
+                                        position: "top-end",
+                                        icon: "success",
+                                        title: "User Created Successfully",
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    });
+                                    navigate('/')
+                                }
+                            })
                     })
                     .catch(error => console.log(error))
             })
@@ -53,7 +69,7 @@ const SignUp = () => {
                 <div className='flex flex-wrap lg:flex-nowrap items-center justify-center lg:gap-48 lg:h-lvh'>
                     <div>
                         <h1 className='text-4xl font-bold text-center'>Sign Up</h1>
-                        <form onSubmit={handleSubmit(onSubmit)} className='space-y-4'>
+                        <form onSubmit={handleSubmit(onSubmit)} className='space-y-3'>
 
                             <h1 className='text-sm font-semibold'>Name</h1>
 
@@ -141,6 +157,7 @@ const SignUp = () => {
                                 <Link to={'/login'}> <span className='text-[#D1A054] font-bold'>
                                     Go to log in</span></Link></p>
                             <p className='mt-4'>Or sign up with</p>
+                            <SocialLogin />
                         </div>
                     </div>
 

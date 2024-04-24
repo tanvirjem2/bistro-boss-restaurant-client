@@ -18,7 +18,6 @@ const Cart = () => {
 
     const axiosSecure = useAxiosSecure();
 
-
     // Function to confirm and delete an item from the cart
 
     const confirmDelete = id => {

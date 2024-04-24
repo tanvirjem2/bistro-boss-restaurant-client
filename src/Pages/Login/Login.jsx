@@ -5,6 +5,8 @@ import { AuthContext } from '../../providers/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2';
+import { FaGoogle } from 'react-icons/fa6';
+import SocialLogin from '../../components/SocialLogin/SocialLogin';
 
 const Login = () => {
 
@@ -121,6 +123,7 @@ const Login = () => {
                                 <Link to={'/signUp'}> <span className='text-[#D1A054] font-bold'>
                                     Create a New Account</span></Link></p>
                             <p className='mt-4'>Or sign in with</p>
+                            <SocialLogin />
                         </div>
                     </div>
                 </div>

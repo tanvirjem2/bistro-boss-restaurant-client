@@ -1,9 +1,16 @@
 import { FaCalendarAlt, FaHome, FaMailBulk, FaShoppingBag, FaShoppingCart } from "react-icons/fa";
-import { FaBars, FaCalendar, FaComment, FaWallet } from "react-icons/fa6";
+import { FaBars, FaBook, FaCalendar, FaComment, FaList, FaUsers, FaUtensils, FaWallet } from "react-icons/fa6";
 import { NavLink, Outlet } from "react-router-dom";
+import useCart from "../hooks/useCart";
+import useAdmin from "../hooks/useAdmin";
 
 
 const Dashboard = () => {
+
+    const [cart] = useCart()
+
+    const [isAdmin] = useAdmin();
+
     return (
         <div className="flex cinzel">
 
@@ -18,59 +25,111 @@ const Dashboard = () => {
 
                 <ul className="menu p-4 space-y-2 font-semibold">
 
-                    {/* ------------- Home ----------- */}
+                    {
+                        isAdmin ?
+                            <>
+                                {/* ------------- Home ----------- */}
 
-                    <li>
-                        <NavLink to='/dashboard/userHome'>
-                            <FaHome />
-                            USER HOME
-                        </NavLink>
-                    </li>
+                                <li>
+                                    <NavLink to='/dashboard/adminHome'>
+                                        <FaHome />
+                                        ADMIN HOME
+                                    </NavLink>
+                                </li>
 
-                    {/* -------- Reservation ---------- */}
+                                {/* -------- Reservation ---------- */}
 
-                    <li>
-                        <NavLink to='/dashboard/reservation'>
-                            <FaCalendar />
-                            RESERVATION
-                        </NavLink>
-                    </li>
+                                <li>
+                                    <NavLink to='/dashboard/addItems'>
+                                        <FaUtensils />
+                                        ADD ITEMS
+                                    </NavLink>
+                                </li>
 
-                    {/* -------- Payment ---------- */}
+                                {/* -------- Payment ---------- */}
 
-                    <li>
-                        <NavLink to='/dashboard/reservation'>
-                            <FaWallet />
-                            PAYMENT HISTORY
-                        </NavLink>
-                    </li>
+                                <li>
+                                    <NavLink to='/dashboard/manageItems'>
+                                        <FaList />
+                                        MANAGE ITEMS
+                                    </NavLink>
+                                </li>
 
-                    {/* ----------- Cart ---------- */}
+                                {/* ----------- Cart ---------- */}
 
-                    <li>
-                        <NavLink to='/dashboard/cart'>
-                            <FaShoppingCart />
-                            MY CART
-                        </NavLink>
-                    </li>
+                                <li>
+                                    <NavLink to='/dashboard/bookings'>
+                                        <FaBook />
+                                        MANAGE BOOKINGS
+                                    </NavLink>
+                                </li>
 
-                    {/* ----------- Add Review ---------- */}
+                                {/* ----------- Add Review ---------- */}
 
-                    <li>
-                        <NavLink to='/dashboard/review'>
-                            <FaComment />
-                            ADD REVIEW
-                        </NavLink>
-                    </li>
+                                <li>
+                                    <NavLink to='/dashboard/users'>
+                                        <FaUsers />
+                                        ALL USERS
+                                    </NavLink>
+                                </li>
+                            </>
+                            :
+                            <>
+                                {/* ------------- Home ----------- */}
 
-                    {/* ----------- My Booking ---------- */}
+                                <li>
+                                    <NavLink to='/dashboard/userHome'>
+                                        <FaHome />
+                                        USER HOME
+                                    </NavLink>
+                                </li>
 
-                    <li>
-                        <NavLink to='/dashboard/booking'>
-                            <FaCalendarAlt />
-                            MY BOOKING
-                        </NavLink>
-                    </li>
+                                {/* -------- Reservation ---------- */}
+
+                                <li>
+                                    <NavLink to='/dashboard/reservation'>
+                                        <FaCalendar />
+                                        RESERVATION
+                                    </NavLink>
+                                </li>
+
+                                {/* -------- Payment ---------- */}
+
+                                <li>
+                                    <NavLink to='/dashboard/reservation'>
+                                        <FaWallet />
+                                        PAYMENT HISTORY
+                                    </NavLink>
+                                </li>
+
+                                {/* ----------- Cart ---------- */}
+
+                                <li>
+                                    <NavLink to='/dashboard/cart'>
+                                        <FaShoppingCart />
+                                        MY CART ({cart.length})
+                                    </NavLink>
+                                </li>
+
+                                {/* ----------- Add Review ---------- */}
+
+                                <li>
+                                    <NavLink to='/dashboard/review'>
+                                        <FaComment />
+                                        ADD REVIEW
+                                    </NavLink>
+                                </li>
+
+                                {/* ----------- My Booking ---------- */}
+
+                                <li>
+                                    <NavLink to='/dashboard/booking'>
+                                        <FaCalendarAlt />
+                                        MY BOOKING
+                                    </NavLink>
+                                </li>
+                            </>
+                    }
 
                     <div className="divider"></div>
 

@@ -2,9 +2,10 @@ import { createContext, useEffect, useState } from "react";
 
 // Step - 7 getAuth from firebase   
 
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 
 import { app } from "../firebase/firebase.config";
+import useAxiosPublic from "../hooks/useAxiosPublic";
 
 // Step -8 auth 
 
@@ -23,6 +24,14 @@ const AuthProvider = ({ children }) => {
     // Step - 5 Loading
 
     const [loading, setLoading] = useState(true);
+
+    // Step - 14 GoogleAuth provider
+
+    const googleProvider = new GoogleAuthProvider();
+
+    // Step - 15 JWT Related Work
+
+    const axiosPublic = useAxiosPublic();
 
     // Step - 6 Go to the main.jsx file and add <AuthProvider>
 
@@ -55,22 +64,43 @@ const AuthProvider = ({ children }) => {
         })
     }
 
+    // Step - 14.1 GoogleSignIn
+
+    const googleSignIn = () => {
+        setLoading(true)
+        return signInWithPopup(auth, googleProvider)
+    }
+
     // Step - 9 onAuthStateChanged()
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
+
+            // JWT Related Work -----
+
+            if (currentUser) {
+                const userInfo = { email: currentUser.email };
+                axiosPublic.post('/jwt', userInfo)
+                    .then(res => {
+                        if (res.data.token) {
+                            localStorage.setItem('access-token', res.data.token)
+                        }
+                    })
+            } else {
+                localStorage.removeItem('access-token')
+            }
             setLoading(false);
         });
         return () => {
             return unsubscribe();
         }
-    }, [])
+    }, [axiosPublic])
 
     // Step - 3 authInfo
 
     const authInfo = {
-        user, loading, createUser, signIn, logOut, updateUserProfile
+        user, loading, createUser, signIn, logOut, updateUserProfile, googleSignIn
     }
 
     return (
