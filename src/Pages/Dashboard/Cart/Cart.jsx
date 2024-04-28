@@ -3,6 +3,7 @@ import useCart from "../../../hooks/useCart"; // Importing custom hook to fetch 
 import Swal from "sweetalert2"; // Importing library for displaying alerts
 import useAxiosSecure from "../../../hooks/useAxiosSecure"; // Importing custom hook for secure Axios requests
 import React, { useMemo } from "react"; // Importing React and useMemo hook
+import { Link } from "react-router-dom";
 
 const Cart = () => {
 
@@ -71,7 +72,14 @@ const Cart = () => {
 
                     {/* Button to proceed for payment */}
 
-                    <button className="btn text-white bg-[#D1A054]">PAY</button>
+                    {
+                        cart.length ?
+                            <Link to='/dashboard/payment'>
+                                <button className="btn text-white bg-[#D1A054]">PAY</button>
+                            </Link>
+                            :
+                            <button disabled className="btn text-white bg-[#D1A054]">PAY</button>
+                    }
                 </div>
                 <div className="overflow-x-auto">
 
